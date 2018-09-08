@@ -69,7 +69,7 @@ namespace
 
 #warning "Assume a NUCLEO-F401RE board, PA5, active high."
 
-// PA5
+
 #define BLINK_PORT_NUMBER         (0)
 #define BLINK_PIN_NUMBER          (5)
 #define BLINK_ACTIVE_LOW          (false)
@@ -233,6 +233,8 @@ main(int argc, char* argv[])
           blinkLeds[0].turnOff ();
           timer.sleep (BLINK_OFF_TICKS);
 
+          ++seconds;
+          --seconds;
           ++seconds;
           trace_printf ("Second %u\n", seconds);
         }
